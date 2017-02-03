@@ -7,28 +7,33 @@ api.get('/', (req, res, next) => {
 	res.json(msg);
 });
 
-api.get('/json', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+
+api.get('/api/fashion/house', (req, res, next) => {
+	// TODO: list all the fashion houses, with their products, designers
 });
 
-api
-	.route('/api/account/types')
-		.get((req, res) => {
-			res.setHeader('Content-Type', 'application/json');
-			res.status(200).jsonp({ text: 'get sent' });
-		})
-		.post((req, res) => {
-			res.setHeader('Content-Type', 'application/json');
-			res.status(200).json({ text: 'post sent' });
-		})
-		.put((req, res) => {
-			res.setHeader('Content-Type', 'application/json');
-			res.status(200).json({ text: 'put sent' });
-		})
-		.delete((req, res) => {
-			res.setHeader('Content-Type', 'application/json');
-			res.status(200).json({ text: 'delete sent' });
-		})
+api.get('/api/designer/', (req, res, next) => {
+	// TODO: list all designer, with their fashion houses, products
+});
 
+
+api.post('/api/authentication/sign/on', (req, res, next) => {
+	// TODO: sign on to the system 
+});
+
+api.post('/api/authentication/register', (req, res, next) => {
+	// TODO: sign up 
+});
+
+api.post('/api/authentication/forgot/password', (req, res, next) => {
+	// TODO: create new tmp password for user
+});
+
+api.post('/api/authentication/sign/off', (req, res, next) => {
+	// TODO: sign off from portal
+});
+
+
+	
 
 module.exports = api;
